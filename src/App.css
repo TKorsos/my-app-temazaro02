@@ -1,0 +1,299 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html, body {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  line-height: 1.5rem;
+}
+
+.App-header {
+  background-color: #242424;
+  /* min-height: 100vh; */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10%;
+}
+
+.select-header {
+  background-color: beige;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 2%;
+}
+
+.container {
+  padding-top: 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 3rem;
+}
+
+.nav-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  position: fixed;
+  top: 0;
+  background-color: beige;
+  margin: 1% 0;
+}
+
+.nav-main > div {
+  margin: 0.2rem 0.5rem;
+}
+
+.nav-main > div > a {
+  color: green;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: all 0.5s;
+}
+
+.nav-main > div > a:hover {
+  color: purple;
+  text-decoration: underline 1px solid purple;
+}
+
+/* Feladat 1 */
+.blog {
+  margin-top: 3rem;
+}
+
+.blog > div {
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
+}
+
+/* Feladat 2 */
+.container > .calculator {
+  justify-self: center;
+  align-self: center;
+  border: 1px solid darkgrey;
+  display: flex;
+  flex-direction: column;
+  padding: 0.2rem ;
+  background-color: #fff;
+}
+
+.container > .calculator > .display {
+  flex: 100%;
+  border: 1px solid darkgray;
+  margin-bottom: 0.2rem;
+  padding: 0.5rem;
+  background-color: lightgray;
+}
+
+.container > .calculator > .buttons {
+  flex: 100%;
+  border: 1px solid darkgray;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 0.3rem;
+  padding: 0.5rem;
+}
+
+.container > .calculator > .buttons > input {
+  height: 3rem;
+  background-color: lightgray;
+  border: 1px solid lightblue;
+}
+
+/* Feladat 3 */
+.page-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-container > header {
+  text-align: center;
+  padding: 2rem;
+  background-color: rgb(66, 66, 66);
+  color: lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-container > nav {
+  display: flex;
+  background-color: rgb(105, 105, 105);
+}
+
+.page-container > nav > div {
+  width: 6rem;
+  display: flex;
+  justify-content: center;
+  margin: 0 0.2rem;
+  background-color: rgb(207, 207, 207);
+  padding: 0.5rem;
+}
+
+.page-container > nav > div > a {
+  text-decoration: none;
+  color: #000;
+}
+
+.page-container > .main-container {
+  display: flex;
+}
+
+.page-container > .main-container > main {
+  flex: 75%;
+  background-color: #fff;
+  padding: 1rem;
+}
+
+.page-container > .main-container > main > .video > .video-content, .page-container > .main-container > main > .image > .image-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.page-container > .main-container > main > .video > .video-content > div, .page-container > .main-container > main > .image > .image-content > div {
+  height: 10rem;
+  margin: 0 1rem;
+  border: 0.5rem solid lightgray;
+}
+
+.page-container > .main-container > main > .video > .video-content > div > iframe, .page-container > .main-container > main > .image > .image-content > div > img {
+  width: 100%;
+}
+
+.page-container > .main-container > aside {
+  flex: 25%;
+  background-color: rgb(172, 172, 172);
+  padding: 0.8rem;
+}
+
+.page-container > footer {
+  text-align: center;
+  padding: 0.8rem;
+  background-color: rgb(66, 66, 66);
+  color: lightgray;
+}
+
+/* belépés */
+.page-container > .main-container > main > .form > .form-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 4rem 0;
+}
+
+.page-container > .main-container > main > .form > .form-content > div > form {
+  height: 22rem;
+}
+
+.page-container > .main-container > main > .form > .form-content > div:nth-of-type(1) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.page-container > .main-container > main > .form > .form-content > div:nth-of-type(2) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 1.5rem;
+}
+
+.page-container > .main-container > main > .form > .form-content > div > .form-login {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  box-shadow: 0 0 1.5rem #000;
+  border-radius: 0.3rem;
+  padding: 0.75rem;
+}
+
+.page-container > .main-container > main > .form > .form-content > div > .form-login > label {
+  margin-top: 1rem;
+}
+
+.page-container > .main-container > main > .form > .form-content > div > .form-login > input {
+  padding: 0.2rem;
+}
+
+.page-container > .main-container > main > .form > .form-content > div > .form-login > .checkbox {
+  display: flex;
+  align-self: flex-start;
+}
+
+.page-container > .main-container > main > .form > .form-content > div > .form-login > div {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.page-container > .main-container > main > .form > .form-content > div > .form-login > div > input {
+  margin: 0.3rem 0.2rem;
+  width: 5rem;
+  padding: 0.4rem 0.6rem;
+}
+
+.page-container > .main-container > main > .form > .form-content .submit {
+  background-color: teal;
+  color: #fff;
+  border-radius: 0.2rem;
+  border: none;
+  cursor: pointer;
+}
+
+.page-container > .main-container > main > .form > .form-content .reset {
+  background-color: red;
+  color: #fff;
+  border-radius: 0.2rem;
+  border: none;
+  cursor: pointer;
+}
+
+/* regisztráció */
+.page-container > .main-container > main > .form > .form-content > div > .form-reg {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  box-shadow: 0 0 1.5rem #000;
+  border-radius: 0.3rem;
+  padding: 0.75rem;
+}
+
+.page-container > .main-container > main > .form > .form-content > div > .form-reg > label {
+  margin-top: 1rem;
+}
+
+.page-container > .main-container > main > .form > .form-content > div > .form-reg > input {
+  padding: 0.2rem;
+}
+
+.page-container > .main-container > main > .form > .form-content > div > .form-reg > .checkbox {
+  display: flex;
+  align-self: flex-start;
+  margin-bottom: 5rem;
+}
+
+.page-container > .main-container > main > .form > .form-content > div > .form-reg > div {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.page-container > .main-container > main > .form > .form-content > div > .form-reg > div > input {
+  margin: 0.3rem 0.2rem;
+  width: 5rem;
+  padding: 0.4rem 0.6rem;
+}
