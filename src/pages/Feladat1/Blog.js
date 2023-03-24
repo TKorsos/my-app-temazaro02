@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Article from "./Article";
 
 export default function Blog() {
 
@@ -6,11 +7,6 @@ export default function Blog() {
     const [posts, setPosts] = useState([]);
     const [users, setUsers] = useState([]);
     const [comments, setComments] = useState([]);
-    const [contentToggle, setContentToggle] = useState( true );
-    const [displayText, setDisplayText] = useState( 'block' );
-
-    const [mainclick, setMainclick] = useState( "" );
-    const [subclick, setSubclick] = useState( "" );
 
     // ajax segítségével lekért adatok
     useEffect( () => {
@@ -39,26 +35,6 @@ export default function Blog() {
         return users[userIndex];
     }
 
-    // posts és comments api összekötése id alapján
-    const getCommentsByPostId = (postId, comments) => {
-        return comments.filter( c => c.postId === postId);
-    }
-
-    // users-hez tartozó posts-ok száma
-    const getPostsByCountUserId = (userId, posts) => {
-        return posts.filter( p => p.userId === userId).length;
-    }
-
-    // kattintásra megváltoztatja a contentToggle state értékét
-    const ToggleContent = () => {
-        setContentToggle(!contentToggle);
-    }
-
-    // contentToggle változás hatására ellenőrzi a displayText értékét és a megfelelő új értéket helyezi el benne
-    useEffect( () => {
-        { displayText === "block" ? setDisplayText("none") : setDisplayText("block") }
-    }, [contentToggle] )
-
     return (
         <div className="container">
             <h1>Blog oldal tartalma</h1>
@@ -69,49 +45,10 @@ export default function Blog() {
                         const user = getUsersById(postId, users);
 
                         return <React.Fragment key={index}>
-                                    {/*event.target -  data={ post.id } ??? state-tel megadva? */}
-                                    <div onClick={ToggleContent} >
+                                    <div>
                                         <h2>{post.id}. {post.title}</h2>
                                         <p>{user.name}</p>
-
-                                        {/* data={ post.id } ??? */}
-                                        <div style={ { display: displayText } }>
-                                            <div className="posts-body">
-                                                <h3>Post adatai</h3>
-                                                <li>User ID: {post.userId}</li>
-                                                <li>ID: {post.id}</li>
-                                                <li>Title: {post.title}</li>
-                                                <li>Body: {post.body}</li>
-                                                <hr/>
-                                            </div>
-
-                                            <div className="users-body">
-                                                <h3>User adatai</h3>
-                                                <li>User ID: {user.id}</li>
-                                                <li>User name: {user.name}</li>
-                                                <li>Postok száma: { getPostsByCountUserId(user.id, posts) }</li>
-                                                <li>Username: {user.username}</li>
-                                                <li>User e-mail: {user.email}</li>
-                                                <li>User address1: {user.address.street} {user.address.suite}</li>
-                                                <li>User address2: {user.address.city} {user.address.zipcode}</li>
-                                                <li>User geo: {user.address.geo.lat} {user.address.geo.lng}</li>
-                                                <li>User phonenumber: {user.phone}</li>
-                                                <li>User website: {user.website}</li>
-                                                <li>User company: {user.company.name} | {user.company.catchPhrase} | {user.company.bs}</li>
-                                                <hr/>
-                                            </div>
-
-                                            <div className="comments-body">
-                                                <h3>Comments</h3>
-                                                {
-                                                    getCommentsByPostId(post.id, comments).map( (comment, index) => {
-                                                        return <React.Fragment key={index}>
-                                                                    <li>{comment.body}</li>
-                                                                </React.Fragment>
-                                                    })
-                                                }
-                                            </div>
-                                        </div>
+                                        <Article post={post} user={user} posts={posts} comments={comments} />
                                     </div>
                                     <hr/>
                                 </React.Fragment>

@@ -71,12 +71,12 @@ html, body {
   margin-top: 3rem;
 }
 
-.blog > div {
-  cursor: pointer;
-}
-
 .hide {
   display: none;
+}
+
+.toggleBtnBlog {
+  width: 12rem;
 }
 
 /* Feladat 2 */
@@ -96,6 +96,9 @@ html, body {
   margin-bottom: 0.2rem;
   padding: 0.5rem;
   background-color: lightgray;
+  text-align: right;
+  font-weight: bold;
+  font-size: 1.1rem;
 }
 
 .container > .calculator > .buttons {
@@ -108,7 +111,7 @@ html, body {
   padding: 0.5rem;
 }
 
-.container > .calculator > .buttons > input {
+.container > .calculator > .buttons > button {
   height: 3rem;
   background-color: lightgray;
   border: 1px solid lightblue;

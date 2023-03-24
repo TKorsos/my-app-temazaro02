@@ -4,17 +4,14 @@ import Buttons from "./Buttons";
 
 export default function Calculator() {
 
-    const initialState = {
-        seven: "",
-        eight: "",
-    }
-    const[calc, setCalc] = useState( initialState );
+    const[nums, setNums] = useState( '' );
+    const cls = '';
 
     return (
         <div className="container">
             <div className="calculator">
-                <Display calc={calc} />
-                <Buttons calc={calc} setCalc={setCalc} cls={initialState} />
+                <Display nums={nums} setNums={setNums} />
+                <Buttons nums={nums} setNums={setNums} cls={cls} />
             </div>
         </div>
     );

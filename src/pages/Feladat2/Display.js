@@ -1,10 +1,8 @@
 import React from "react";
 
-export default function Display(props) {
+export default function Display({ nums, setNums }) {
 
     return (
-        <div className="display">
-            { props.calc.seven + props.calc.eight }
-        </div>
+        <input type="text" className="display" value={nums} onChange={ ()=> setNums( nums ) } />
     );
 };
