@@ -1,28 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
     Link,
 } from "react-router-dom";
 
 export default function Account() {
 
-    const[regData, setRegData] = useState( { email: "", checkboxReg: "false" } );
-    const[loginData, setLoginData] = useState( { email: "", password: "" } );
-    const[chekReg, setChekReg] = useState( false );
-    // const[chekRegVal, setChekRegVal] = useState( "false" );
+    const[regData, setRegData] = useState( { email: "", checkboxReg: "" } );
+    const[loginData, setLoginData] = useState( { email: "", password: "", checkboxLogin: "" } );
 
-    // checkboxok - value function true vagy false és toString()
-
-    // const ChekValue = () => {
-    //     setChekReg(!chekReg);
-    // }
-
-    // useEffect( () => {
-    //     { chekRegVal === "false" ? setChekRegVal("true") : setChekRegVal("false") }
-    // }, [chekReg] )
-
-    //
-
-
+    // regisztrációkor küldött adatok
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -35,10 +21,17 @@ export default function Account() {
         })
     }
 
+    // regisztráicónál megadott adatok bekerülnek a statebe
     const handleChange = (e) => {
-        setRegData( { [e.target.name]: e.target.value } );
+        if(e.target.type === "checkbox") {
+            setRegData( { ...regData, [e.target.name]: e.target.checked } );    
+        }
+        else {
+            setRegData( { ...regData, [e.target.name]: e.target.value } );
+        }
     }
 
+    // belépéskor küldött adatok
     const handleSubmitLogin = (e) => {
         e.preventDefault();
 
@@ -51,8 +44,14 @@ export default function Account() {
         })
     }
 
+    // belépésnél megadott adatok bekerülnek a statebe
     const handleChangeLogin = (e) => {
-        setLoginData( { ...loginData, [e.target.name]: e.target.value } );
+        if(e.target.type === "checkbox") {
+            setLoginData( { ...loginData, [e.target.name]: e.target.checked } );
+        }
+        else {
+            setLoginData( { ...loginData, [e.target.name]: e.target.value } );
+        }
     }
 
     return (
@@ -90,7 +89,7 @@ export default function Account() {
                                                 <input type="password" id="password" name="password" placeholder="Jelszavad" onChange={handleChangeLogin} />
                                                 <div className="checkbox">
                                                     <span>
-                                                    <input type="checkbox" name="checkboxLogin"  /> Emlékezz rám
+                                                    <input type="checkbox" name="checkboxLogin" onClick={handleChangeLogin}  /> Emlékezz rám
                                                     </span>
                                                 </div>
                                                 <div>
@@ -106,9 +105,8 @@ export default function Account() {
                                                 <input type="email" id="email2" name="email" placeholder="E-mail címed" onChange={handleChange} />
                                                 <div className="checkbox">
                                                     <span>
-                                                    <input type="checkbox" name="checkboxReg" checked={chekReg} value={chekReg.toString()} onChange={(e)=> setChekReg( e.target.checked )}  /> Adatvédelmi nyilatkozat elfogadása
+                                                    <input type="checkbox" name="checkboxReg" onClick={handleChange}  /> Adatvédelmi nyilatkozat elfogadása
                                                     </span>
-                                                    {/* (e)=> setChekReg( e.target.checked ) value={chekRegVal} */}
                                                 </div>
                                                 <div>
                                                     <input type="submit" value="Küldés" className="submit" />
