@@ -5,8 +5,8 @@ import {
 
 export default function Account() {
 
-    const[regData, setRegData] = useState( { email: "", checkboxReg: "" } );
-    const[loginData, setLoginData] = useState( { email: "", password: "", checkboxLogin: "" } );
+    const[regData, setRegData] = useState( { email: "", checkboxReg: false } );
+    const[loginData, setLoginData] = useState( { email: "", password: "", checkboxLogin: false } );
 
     // regisztrációkor küldött adatok
     const handleSubmit = (e) => {
