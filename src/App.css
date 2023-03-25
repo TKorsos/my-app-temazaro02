@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
 }
 
 html, body {
@@ -12,7 +13,6 @@ html, body {
 
 .App-header {
   background-color: #242424;
-  /* min-height: 100vh; */
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -22,7 +22,7 @@ html, body {
 }
 
 .select-header {
-  background-color: beige;
+  background-color: rgb(252, 237, 188);
   min-height: 100vh;
   width: 100%;
   display: flex;
@@ -45,8 +45,29 @@ html, body {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   position: fixed;
   top: 0;
-  background-color: beige;
+  background-color: rgb(252, 237, 188);
   margin: 1% 0;
+}
+
+@media screen and (max-width: 600px) {
+
+  .App-header {
+    padding: 0;
+  }
+
+  .container {
+    margin: 5rem 0 0 0;
+  }
+
+  .nav-main {
+    grid-template-columns: 1fr;
+    width: 100%;
+    text-align: center;
+  }
+
+  .sub-h1 {
+    margin: 0;
+  }
 }
 
 .nav-main > div {
@@ -66,17 +87,77 @@ html, body {
   text-decoration: underline 1px solid purple;
 }
 
+.sub-h1 {
+  font-style: italic;
+}
+
 /* Feladat 1 */
 .blog {
   margin-top: 3rem;
 }
 
-.hide {
-  display: none;
-}
-
 .toggleBtnBlog {
   width: 12rem;
+  background-color: sienna;
+  padding: 0.3rem 0.5rem;
+  margin: 0.5rem 0;
+  border-radius: 0.3rem;
+  border: 0.1rem solid transparent;
+  box-shadow: 0 0 0.5rem #1d1d1d;
+  color: #c9c9c9;
+  transition: all 0.5s;
+}
+
+.toggleBtnBlog:hover {
+  background-color: rgb(252, 237, 188);
+  border: 0.1rem solid sienna;
+  color: #000;
+  cursor: pointer;
+}
+
+.postuserdata {
+  color: rgb(139, 72, 41);
+}
+
+.bloghr {
+  border: 0.13rem solid rgb(99, 44, 7);
+}
+
+.articlehr {
+  width: 50%;
+  border: 0.1rem solid rgb(99, 44, 7);
+  margin: 1rem auto;
+}
+
+.upbtn {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  right: 2.5rem;
+  bottom: 2.5rem;
+  border: 0.1rem solid sienna;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0 0 0;
+  background-color: sienna;
+  color: #fff;
+  font-size: 2rem;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+
+.upbtn:hover {
+  bottom: 3rem;
+  border: 0.1rem solid sienna;
+  background-color: sienna;
+  box-shadow: 0 0 0.5rem #fff;
+  cursor: pointer;
+}
+
+.gototop {
+  vertical-align: sub;
 }
 
 /* Feladat 2 */
@@ -103,7 +184,7 @@ html, body {
 
 .container > .calculator > .buttons {
   flex: 100%;
-  border: 1px solid darkgray;
+  border: 1px solid rgb(169, 169, 169);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
@@ -113,7 +194,7 @@ html, body {
 
 .container > .calculator > .buttons > button {
   height: 3rem;
-  background-color: lightgray;
+  background-color: rgb(189, 199, 211);
   border: 1px solid lightblue;
 }
 
