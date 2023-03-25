@@ -21,31 +21,30 @@ const Article = ({ post, user, posts, comments }) => {
 
     return (
             <React.Fragment>
-                <button className="toggleBtnBlog" onClick={ToggleContent}>{ show ? 'Részletek elrejtése' : 'Részletek megjelenítése' }</button>
                 { show &&
                     <div>
                         <div className="posts-body">
                             <h3>Post adatai</h3>
-                            <li>User ID: {post.userId}</li>
-                            <li>ID: {post.id}</li>
-                            <li>Title: {post.title}</li>
-                            <li>Body: {post.body}</li>
-                            <hr/>
+                            <li><span className='postuserdata'>User ID:</span> {post.userId}</li>
+                            <li><span className='postuserdata'>ID:</span> {post.id}</li>
+                            <li><span className='postuserdata'>Title:</span> {post.title}</li>
+                            <li><span className='postuserdata'>Body:</span> {post.body}</li>
+                            <hr className='articlehr' />
                         </div>
                         <div className="users-body">
                             <h3>User adatai</h3>
-                            <li>User ID: {user.id}</li>
-                            <li>User name: {user.name}</li>
-                            <li>Postok száma: { getPostsByCountUserId(user.id, posts) }</li>
-                            <li>Username: {user.username}</li>
-                            <li>User e-mail: {user.email}</li>
-                            <li>User address1: {user.address.street} {user.address.suite}</li>
-                            <li>User address2: {user.address.city} {user.address.zipcode}</li>
-                            <li>User geo: {user.address.geo.lat} {user.address.geo.lng}</li>
-                            <li>User phonenumber: {user.phone}</li>
-                            <li>User website: {user.website}</li>
-                            <li>User company: {user.company.name} | {user.company.catchPhrase} | {user.company.bs}</li>
-                            <hr/>
+                            <li><span className='postuserdata'>User ID:</span> {user.id}</li>
+                            <li><span className='postuserdata'>User name:</span> {user.name}</li>
+                            <li><span className='postuserdata'>Postok száma:</span> { getPostsByCountUserId(user.id, posts) }</li>
+                            <li><span className='postuserdata'>Username:</span> {user.username}</li>
+                            <li><span className='postuserdata'>User e-mail:</span> {user.email}</li>
+                            <li><span className='postuserdata'>User address1:</span> {user.address.street} {user.address.suite}</li>
+                            <li><span className='postuserdata'>User address2:</span> {user.address.city} {user.address.zipcode}</li>
+                            <li><span className='postuserdata'>User geo:</span> {user.address.geo.lat} {user.address.geo.lng}</li>
+                            <li><span className='postuserdata'>User phonenumber:</span> {user.phone}</li>
+                            <li><span className='postuserdata'>User website:</span> {user.website}</li>
+                            <li><span className='postuserdata'>User company:</span> {user.company.name} | {user.company.catchPhrase} | {user.company.bs}</li>
+                            <hr className='articlehr' />
                         </div>
                         <div className="comments-body">
                             <h3>Comments</h3>
@@ -59,6 +58,8 @@ const Article = ({ post, user, posts, comments }) => {
                         </div>
                     </div>
                 }
+
+                <button className="toggleBtnBlog" onClick={ToggleContent}>{ show ? 'Részletek elrejtése' : 'Részletek megjelenítése' }</button>
             </React.Fragment>
     )
 

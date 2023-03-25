@@ -7,6 +7,7 @@ export default function Blog() {
     const [posts, setPosts] = useState([]);
     const [users, setUsers] = useState([]);
     const [comments, setComments] = useState([]);
+    const [goToTop, setGoToTop] = useState( false );
 
     // ajax segítségével lekért adatok
     useEffect( () => {
@@ -35,9 +36,21 @@ export default function Blog() {
         return users[userIndex];
     }
 
+    // fel gomb megjelenése
+    useEffect( () => {
+        window.addEventListener("scroll", () => {
+            if(window.scrollY > 200) {
+                setGoToTop(true);
+            }
+            else {
+                setGoToTop(false);
+            }
+        })
+    }, [])
+
     return (
         <div className="container">
-            <h1>Blog oldal tartalma</h1>
+            <h1 className="sub-h1">Blog oldal tartalma</h1>
             <div className="blog">
                 {
                     posts.map( (post, index) => {
@@ -50,11 +63,18 @@ export default function Blog() {
                                         <p>{user.name}</p>
                                         <Article post={post} user={user} posts={posts} comments={comments} />
                                     </div>
-                                    <hr/>
+                                    <hr className="bloghr" />
                                 </React.Fragment>
                     })
                 }
             </div>
+            
+            {
+                goToTop && (
+                    <a href="#root" className="upbtn" ><span className="gototop">^</span></a>
+                )
+            }
+            
         </div>
     );
 };
