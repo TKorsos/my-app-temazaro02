@@ -63,7 +63,7 @@ export default function Blog() {
                                         <p>{user.name}</p>
                                         <Article post={post} user={user} posts={posts} comments={comments} />
                                     </div>
-                                    <hr className="bloghr" />
+                                    <hr className="blog-hr" />
                                 </React.Fragment>
                     })
                 }
@@ -71,7 +71,7 @@ export default function Blog() {
             
             {
                 goToTop && (
-                    <a href="#root" className="upbtn" ><span className="gototop">^</span></a>
+                    <a href="#root" className="up-btn" >^</a>
                 )
             }
             

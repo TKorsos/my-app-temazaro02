@@ -96,7 +96,7 @@ html, body {
   margin-top: 3rem;
 }
 
-.toggleBtnBlog {
+.toggle-btn-blog {
   width: 12rem;
   background-color: sienna;
   padding: 0.3rem 0.5rem;
@@ -108,28 +108,28 @@ html, body {
   transition: all 0.5s;
 }
 
-.toggleBtnBlog:hover {
+.toggle-btn-blog:hover {
   background-color: rgb(252, 237, 188);
   border: 0.1rem solid sienna;
   color: #000;
   cursor: pointer;
 }
 
-.postuserdata {
+.post-user-data {
   color: rgb(139, 72, 41);
 }
 
-.bloghr {
+.blog-hr {
   border: 0.13rem solid rgb(99, 44, 7);
 }
 
-.articlehr {
+.article-hr {
   width: 50%;
   border: 0.1rem solid rgb(99, 44, 7);
   margin: 1rem auto;
 }
 
-.upbtn {
+.up-btn {
   width: 3rem;
   height: 3rem;
   display: flex;
@@ -148,16 +148,12 @@ html, body {
   transition: all 0.5s;
 }
 
-.upbtn:hover {
+.up-btn:hover {
   bottom: 3rem;
   border: 0.1rem solid sienna;
   background-color: sienna;
   box-shadow: 0 0 0.5rem #fff;
   cursor: pointer;
-}
-
-.gototop {
-  vertical-align: sub;
 }
 
 /* Feladat 2 */
@@ -272,7 +268,7 @@ html, body {
   color: lightgray;
 }
 
-/* belépés */
+/* Form */
 .page-container > .main-container > main > .form > .form-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -296,6 +292,7 @@ html, body {
   margin-left: 1.5rem;
 }
 
+/* Belépés */
 .page-container > .main-container > main > .form > .form-content > div > .form-login {
   display: flex;
   flex-direction: column;
@@ -313,8 +310,7 @@ html, body {
   padding: 0.2rem;
 }
 
-.page-container > .main-container > main > .form > .form-content > div > .form-login > .checkbox {
-  display: flex;
+#checkLog {
   align-self: flex-start;
 }
 
@@ -364,10 +360,8 @@ html, body {
   padding: 0.2rem;
 }
 
-.page-container > .main-container > main > .form > .form-content > div > .form-reg > .checkbox {
-  display: flex;
+#checkReg {
   align-self: flex-start;
-  margin-bottom: 5rem;
 }
 
 .page-container > .main-container > main > .form > .form-content > div > .form-reg > div {
