@@ -87,11 +87,10 @@ export default function Account() {
                                                 <input type="email" id="email" name="email" placeholder="E-mail címed" onChange={handleChangeLogin} />
                                                 <label htmlFor="password">Jelszó</label>
                                                 <input type="password" id="password" name="password" placeholder="Jelszavad" onChange={handleChangeLogin} />
-                                                <div className="checkbox">
-                                                    <span>
-                                                    <input type="checkbox" name="checkboxLogin" onClick={handleChangeLogin}  /> Emlékezz rám
-                                                    </span>
-                                                </div>
+                                                <label htmlFor="checkLog">
+                                                    <input type="checkbox" id="checkLog" name="checkboxLogin" onClick={handleChangeLogin}  />
+                                                    Emlékezz rám
+                                                </label>
                                                 <div>
                                                     <input type="submit" value="Belépés" className="submit" />
                                                     <input type="reset" value="Mégsem" className="reset" />
@@ -103,11 +102,10 @@ export default function Account() {
                                                 <h3>Regisztráció</h3>
                                                 <label htmlFor="email2">E-mail cím</label>
                                                 <input type="email" id="email2" name="email" placeholder="E-mail címed" onChange={handleChange} />
-                                                <div className="checkbox">
-                                                    <span>
-                                                    <input type="checkbox" name="checkboxReg" onClick={handleChange}  /> Adatvédelmi nyilatkozat elfogadása
-                                                    </span>
-                                                </div>
+                                                <label htmlFor="checkReg">
+                                                    <input type="checkbox" id="checkReg" name="checkboxReg" onClick={handleChange}  />
+                                                    Adatvédelmi nyilatkozat elfogadása
+                                                </label>
                                                 <div>
                                                     <input type="submit" value="Küldés" className="submit" />
                                                 </div>
