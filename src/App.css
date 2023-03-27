@@ -300,6 +300,7 @@ html, body {
   box-shadow: 0 0 1.5rem #000;
   border-radius: 0.3rem;
   padding: 0.75rem;
+  position: relative;
 }
 
 .page-container > .main-container > main > .form > .form-content > div > .form-login > label {
@@ -317,7 +318,10 @@ html, body {
 .page-container > .main-container > main > .form > .form-content > div > .form-login > div {
   display: flex;
   justify-content: center;
-  margin: 1rem 0;
+  position: absolute;
+  bottom: 2rem;
+  margin: 0 auto;
+  width: calc(100% - 1.5rem);
 }
 
 .page-container > .main-container > main > .form > .form-content > div > .form-login > div > input {
@@ -350,6 +354,7 @@ html, body {
   box-shadow: 0 0 1.5rem #000;
   border-radius: 0.3rem;
   padding: 0.75rem;
+  position: relative;
 }
 
 .page-container > .main-container > main > .form > .form-content > div > .form-reg > label {
@@ -367,7 +372,10 @@ html, body {
 .page-container > .main-container > main > .form > .form-content > div > .form-reg > div {
   display: flex;
   justify-content: center;
-  margin: 1rem 0;
+  position: absolute;
+  bottom: 2rem;
+  margin: 0 auto;
+  width: calc(100% - 1.5rem);
 }
 
 .page-container > .main-container > main > .form > .form-content > div > .form-reg > div > input {
