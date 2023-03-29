@@ -2,6 +2,10 @@ import React from "react";
 import {
     Link,
 } from "react-router-dom";
+import dog from "../../images/dog.jpg";
+import heart from "../../images/heart.jpg";
+import planet from "../../images/planet.jpg";
+import Iframe from "react-iframe";
 
 export default function Layout() {
     return (
@@ -31,13 +35,34 @@ export default function Layout() {
                                     <h2>Videók</h2>
                                     <div className="video-content">
                                         <div>
-                                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/laDyFToOEvg" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+                                            <Iframe
+                                                url="https://www.youtube.com/embed/laDyFToOEvg"
+                                                width="100%"
+                                                height="100%"
+                                                frameBorder="0"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                                allowFullScreen
+                                             />
                                         </div>
                                         <div>
-                                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/ub747pprmJ8" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+                                            <Iframe
+                                                url="https://www.youtube.com/embed/ub747pprmJ8"
+                                                width="100%"
+                                                height="100%"
+                                                frameBorder="0"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                                allowFullScreen
+                                             />
                                         </div>
                                         <div>
-                                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/e0kDV6wbIxo" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+                                            <Iframe
+                                                url="https://www.youtube.com/embed/e0kDV6wbIxo"
+                                                width="100%"
+                                                height="100%"
+                                                frameBorder="0"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                                allowFullScreen
+                                             />
                                         </div>
                                     </div>
                                 </div>
@@ -46,13 +71,13 @@ export default function Layout() {
                                     <h2>Képek</h2>
                                     <div className="image-content">
                                         <div>
-                                            <img src="http://localhost/react/my-app-temazaro02/src/pages/Feladat3/images/dog.jpg" alt="dog" width="100%" height="100%" />
+                                            <img src={dog} alt="dog" width="100%" height="100%" />
                                         </div>
                                         <div>
-                                            <img src="http://localhost/react/my-app-temazaro02/src/pages/Feladat3/images/heart.jpg" alt="heart" width="100%" height="100%" />
+                                            <img src={heart} alt="heart" width="100%" height="100%" />
                                         </div>
                                         <div>
-                                            <img src="http://localhost/react/my-app-temazaro02/src/pages/Feladat3/images/planet.jpg" alt="planet" width="100%" height="100%" />
+                                            <img src={planet} alt="planet" width="100%" height="100%" />
                                         </div>
                                     </div>
                                 </div>
